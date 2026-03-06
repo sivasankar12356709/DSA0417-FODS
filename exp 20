@@ -1,0 +1,15 @@
+import numpy as np
+from scipy.stats import ttest_ind
+
+A=np.random.normal(0.12,0.02,100)
+B=np.random.normal(0.15,0.02,100)
+
+t,p=ttest_ind(A,B)
+
+print("t-statistic:",t)
+print("p-value:",p)
+
+if p<0.05:
+    print("Significant difference between A and B")
+else:
+    print("No significant difference")
