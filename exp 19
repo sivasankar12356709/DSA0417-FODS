@@ -1,0 +1,13 @@
+import numpy as np
+import scipy.stats as stats
+
+drug = np.random.normal(10,3,50)
+placebo = np.random.normal(4,2,50)
+
+def CI(data):
+    mean=np.mean(data)
+    sem=stats.sem(data)
+    return stats.t.interval(0.95,len(data)-1,loc=mean,scale=sem)
+
+print("Drug CI:",CI(drug))
+print("Placebo CI:",CI(placebo))
