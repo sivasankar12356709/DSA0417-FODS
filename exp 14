@@ -1,0 +1,10 @@
+import pandas as pd
+
+data = {'Age':[21,23,25,21,30,25,28,30,23,21]}
+
+df = pd.DataFrame(data)
+
+frequency = df['Age'].value_counts()
+
+print("Age Frequency Distribution:")
+print(frequency)
