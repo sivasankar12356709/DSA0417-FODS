@@ -1,0 +1,24 @@
+# Item prices and quantities
+prices = [50, 30, 20]
+quantities = [2, 3, 1]
+
+discount_rate = 10   # 10%
+tax_rate = 5         # 5%
+
+# Calculate total price
+total = 0
+for i in range(len(prices)):
+    total += prices[i] * quantities[i]
+
+# Apply discount
+discount = total * (discount_rate / 100)
+price_after_discount = total - discount
+
+# Apply tax
+tax = price_after_discount * (tax_rate / 100)
+final_price = price_after_discount + tax
+
+print("Total Price:", total)
+print("Discount:", discount)
+print("Tax:", tax)
+print("Final Price to Pay:", final_price)
