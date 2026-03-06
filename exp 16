@@ -1,0 +1,17 @@
+from collections import Counter
+
+reviews = [
+"This product is very good",
+"I like this product",
+"This product is not good",
+"Very good quality product"
+]
+
+text = " ".join(reviews).lower()
+words = text.split()
+
+frequency = Counter(words)
+
+print("Word Frequency:")
+for word, count in frequency.items():
+    print(word, ":", count)
