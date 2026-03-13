@@ -1,0 +1,15 @@
+from sklearn.neighbors import KNeighborsClassifier
+
+X = [[1,2],[2,3],[3,4],[6,7]]
+y = [0,0,1,1]
+
+k = int(input("Enter k value: "))
+f1 = float(input("Enter feature1: "))
+f2 = float(input("Enter feature2: "))
+
+model = KNeighborsClassifier(n_neighbors=k)
+model.fit(X,y)
+
+prediction = model.predict([[f1,f2]])
+
+print("Prediction:",prediction[0])
