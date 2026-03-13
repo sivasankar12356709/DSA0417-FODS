@@ -1,0 +1,25 @@
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+data = pd.read_csv("rare_elements.csv")
+
+values = data.iloc[:,0]
+
+n = int(input("Enter sample size: "))
+confidence = float(input("Enter confidence level (e.g.,0.95): "))
+
+sample = np.random.choice(values, n)
+
+mean = np.mean(sample)
+std = np.std(sample, ddof=1)
+
+z = stats.norm.ppf((1+confidence)/2)
+
+margin = z * (std/np.sqrt(n))
+
+lower = mean - margin
+upper = mean + margin
+
+print("Sample Mean:", mean)
+print("Confidence Interval:", lower, upper)
